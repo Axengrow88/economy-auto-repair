@@ -903,8 +903,7 @@ button, input, select, textarea { font-family: inherit; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -947,13 +946,7 @@ button, input, select, textarea { font-family: inherit; }
   color: var(--text);
 }
 
-.gallery-item.large {
-  grid-row: span 2;
-}
-
-.gallery-item.large img { min-height: 100%; }
-
-.gallery-item:not(.large) img { height: 260px; }
+.gallery-item img { height: 260px; }
 
 /* ============================================
    10. ESTIMATE FORM SECTION
@@ -1348,8 +1341,6 @@ button, input, select, textarea { font-family: inherit; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item.large { grid-row: span 1; }
-  .gallery-item:not(.large) img { height: 220px; }
 
   .why-us { grid-template-columns: 1fr; }
   .why-us-image {
@@ -1731,34 +1722,44 @@ button, input, select, textarea { font-family: inherit; }
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item large" data-aos="fade-up">
-        <img src="https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Economy Auto Repair shop interior" loading="lazy">
-        <div class="caption"><span>Our Shop</span></div>
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="images/business-sign.png" alt="Economy Auto Repair business sign" loading="lazy">
+        <div class="caption"><span>Economy Auto Repair</span></div>
       </div>
 
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/3642618/pexels-photo-3642618.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Engine work" loading="lazy">
+        <img src="images/mechanic-at-work.png" alt="Mechanic working under the hood" loading="lazy">
+        <div class="caption"><span>Expert Service</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/truck-on-lift.png" alt="Truck on hydraulic lift in shop" loading="lazy">
+        <div class="caption"><span>Full-Service Shop</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/towing-service.png" alt="Free towing service valley wide" loading="lazy">
+        <div class="caption"><span>Free Towing Valley Wide</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="images/shop-exterior.png" alt="Shop exterior with motorcycles" loading="lazy">
+        <div class="caption"><span>Shop Exterior</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/engine-bay.png" alt="Clean engine bay service" loading="lazy">
         <div class="caption"><span>Engine Service</span></div>
       </div>
 
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://images.pexels.com/photos/3807811/pexels-photo-3807811.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Brake service" loading="lazy">
-        <div class="caption"><span>Brake Service</span></div>
+        <img src="images/motorcycle-service.png" alt="Motorcycle repair service" loading="lazy">
+        <div class="caption"><span>Motorcycle Service</span></div>
       </div>
 
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/4488660/pexels-photo-4488660.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Diagnostic equipment" loading="lazy">
-        <div class="caption"><span>Diagnostics</span></div>
-      </div>
-
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://images.pexels.com/photos/3807133/pexels-photo-3807133.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional tools" loading="lazy">
-        <div class="caption"><span>Professional Tools</span></div>
-      </div>
-
-      <div class="gallery-item large" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Transmission rebuild" loading="lazy">
-        <div class="caption"><span>Transmission Rebuilds</span></div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/company-truck.png" alt="Economy Auto Repair company truck" loading="lazy">
+        <div class="caption"><span>Our Fleet</span></div>
       </div>
     </div>
   </div>
