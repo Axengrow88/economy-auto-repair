@@ -3,689 +3,2255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Economy Auto Repair | McAllen, TX - Affordable Auto Repair & Free Estimates</title>
-  <meta name="description" content="Economy Auto Repair in McAllen, TX. 4.9★ rated. Free towing, free estimates. Engine, transmission, brakes, A/C & more. Call (956) 400-0911.">
+  <title>Economy Auto Repair | McAllen, TX — Honest. Affordable. Auto Repair You Can Trust.</title>
+  <meta name="description" content="Economy Auto Repair in McAllen, TX. 4.9★ rated with 155+ reviews. Free towing valley wide, free estimates, $8 oil changes. Engine, transmission, brakes, A/C & more. Call (956) 400-0911.">
+  <meta name="keywords" content="auto repair mcallen tx, mechanic mcallen, free towing mcallen, oil change mcallen, transmission repair, engine rebuild, economy auto repair">
+  <meta property="og:title" content="Economy Auto Repair | McAllen, TX">
+  <meta property="og:description" content="Honest. Affordable. Auto Repair You Can Trust. Free towing, free estimates, $8 oil changes. Call (956) 400-0911.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+/* ============================================
+   CSS RESET & CUSTOM PROPERTIES
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0A0A0A;
+  --surface: #111111;
+  --card: #161616;
+  --border: #222222;
+  --gold: #E8B84B;
+  --gold-hover: #F5CC6A;
+  --red: #C0392B;
+  --text: #F5F5F5;
+  --muted: #888888;
+  --subtle: #555555;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-gold: 0 0 40px rgba(232, 184, 75, 0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button, input, select, textarea { font-family: inherit; }
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section utilities */
+.section-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 5vw, 64px);
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.section-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* ============================================
+   1. NAVIGATION
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  transition: var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(10,10,10,0.98);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.5);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold);
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.nav-logo-text span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--gold);
+  transition: var(--transition);
+}
+
+.nav-phone:hover {
+  background: rgba(232,184,75,0.1);
+}
+
+.nav-phone svg { width: 14px; height: 14px; }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--gold);
+  color: #0A0A0A;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-gold:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,184,75,0.25);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.nav-cta {
+  font-size: 12px;
+  padding: 10px 20px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Nav Overlay */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(40px);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.mobile-nav.active { display: flex; }
+
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 36px;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.mobile-nav a:hover { color: var(--gold); }
+
+.mobile-nav-phone {
+  margin-top: 24px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--gold);
+}
+
+/* ============================================
+   2. HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.92) 35%, rgba(0,0,0,0.6) 65%, rgba(0,0,0,0.3) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding-top: 80px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0ms;
+}
+
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(64px, 10vw, 140px);
+  text-transform: uppercase;
+  line-height: 0.92;
+  color: var(--text);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 150ms;
+}
+
+.hero-headline-gold {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(64px, 10vw, 140px);
+  text-transform: uppercase;
+  line-height: 0.92;
+  color: var(--gold);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 300ms;
+}
+
+.hero-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 450ms;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 600ms;
+}
+
+.hero-ctas .btn-gold,
+.hero-ctas .btn-ghost {
+  height: 52px;
+  font-size: 15px;
+  padding: 0 32px;
+}
+
+.hero-trust-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 750ms;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(22,22,22,0.8);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.trust-pill .emoji { font-size: 14px; }
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  color: var(--subtle);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   3. MARQUEE STRIP
+   ============================================ */
+.marquee-strip {
+  width: 100%;
+  height: 48px;
+  background: var(--bg);
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1px;
+  padding: 0 20px;
+}
+
+.marquee-track .sep {
+  color: var(--gold);
+  opacity: 0.4;
+  font-size: 10px;
+  padding: 0;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   4. STATS BAR
+   ============================================ */
+.stats-bar {
+  background: var(--surface);
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--gold);
+  opacity: 0.3;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(48px, 5vw, 64px);
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   5. SERVICES SECTION
+   ============================================ */
+.services {
+  padding: 120px 0;
+  background: var(--bg);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.services-header .section-sub {
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(232,184,75,0.08);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold);
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.service-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--gold);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.service-link:hover { text-decoration: underline; }
+
+/* ============================================
+   6. WHY CHOOSE US — EDITORIAL SPLIT
+   ============================================ */
+.why-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.why-us-image {
+  position: relative;
+  overflow: hidden;
+  border-right: 4px solid var(--gold);
+}
+
+.why-us-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.why-us-content {
+  background: var(--surface);
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-us-content .section-heading {
+  font-size: clamp(36px, 4vw, 52px);
+}
+
+.why-us-content > p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.trust-points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.trust-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.trust-point-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(232,184,75,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.trust-point-text h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.trust-point-text p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.why-us-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(22,22,22,0.8);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ============================================
+   7. SPECIALS SECTION
+   ============================================ */
+.specials {
+  padding: 120px 0;
+  background: var(--bg);
+  position: relative;
+}
+
+.specials::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(232,184,75,0.02) 0%, transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(232,184,75,0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.specials-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.special-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 48px 32px 36px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.special-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.special-card.featured {
+  transform: scale(1.04);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.special-card.featured:hover {
+  transform: scale(1.04) translateY(-4px);
+}
+
+.ribbon {
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 40px;
+  transform: rotate(45deg);
+}
+
+.special-price {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 96px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.special-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.special-card p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.special-card ul {
+  text-align: left;
+  margin: 0 auto 28px;
+  max-width: 240px;
+}
+
+.special-card ul li {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(34,34,34,0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.special-card ul li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.special-card .btn-gold {
+  width: 100%;
+  height: 48px;
+}
+
+/* ============================================
+   8. REVIEWS SECTION
+   ============================================ */
+.reviews {
+  padding: 120px 0;
+  background: var(--bg);
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.reviews-header .section-sub {
+  margin: 0 auto;
+}
+
+.reviews-link {
+  color: var(--gold);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.reviews-link:hover { text-decoration: underline; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  border-color: rgba(232,184,75,0.3);
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 16px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  background: rgba(232,184,75,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+.review-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.review-city {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* ============================================
+   9. GALLERY SECTION
+   ============================================ */
+.gallery {
+  padding: 120px 0;
+  background: var(--surface);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 12px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .caption {
+  transform: translateY(0);
+}
+
+.caption span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.gallery-item.large {
+  grid-row: span 2;
+}
+
+.gallery-item.large img { min-height: 100%; }
+
+.gallery-item:not(.large) img { height: 260px; }
+
+/* ============================================
+   10. ESTIMATE FORM SECTION
+   ============================================ */
+.estimate {
+  padding: 120px 0;
+  background: var(--bg);
+}
+
+.estimate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.estimate-info { padding-right: 24px; }
+
+.estimate-info .section-heading {
+  font-size: clamp(36px, 4vw, 56px);
+}
+
+.estimate-info > p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-block-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(232,184,75,0.08);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-block-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gold);
+}
+
+.info-block-text strong {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.info-block-text span {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.map-embed {
+  width: 100%;
+  height: 280px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.estimate-form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.estimate-form-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.estimate-form-card > p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: #1A1A1A;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 52px;
+  margin-top: 8px;
+  background: var(--gold);
+  color: #0A0A0A;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-submit:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,184,75,0.25);
+}
+
+/* Form success state */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.form-success.active { display: block; }
+.form-success .check-icon { font-size: 64px; margin-bottom: 20px; }
+.form-success h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.form-success p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ============================================
+   11. FINAL CTA BANNER
+   ============================================ */
+.final-cta {
+  position: relative;
+  padding: 120px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.final-cta-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size: cover;
+  background-position: center;
+}
+
+.final-cta-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.88);
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 80px);
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.final-cta p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+.final-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.final-cta-buttons .btn-gold,
+.final-cta-buttons .btn-ghost {
+  height: 52px;
+  font-size: 16px;
+  padding: 0 36px;
+}
+
+/* ============================================
+   12. FOOTER
+   ============================================ */
+.footer {
+  background: #050505;
+  border-top: 1px solid var(--gold);
+  padding: 80px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .nav-logo {
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.payment-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.payment-badge {
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.footer-col ul li a:hover { color: var(--gold); }
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.footer-contact-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  min-width: 16px;
+}
+
+.footer-contact-item span {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1200px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+  .nav-links, .nav-right { display: none; }
+  .hamburger { display: flex; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .specials-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .special-card.featured { transform: none; }
+  .special-card.featured:hover { transform: translateY(-4px); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.large { grid-row: span 1; }
+  .gallery-item:not(.large) img { height: 220px; }
+
+  .why-us { grid-template-columns: 1fr; }
+  .why-us-image {
+    height: 400px;
+    border-right: none;
+    border-bottom: 4px solid var(--gold);
+  }
+  .why-us-content { padding: 60px 32px; }
+
+  .estimate-grid { grid-template-columns: 1fr; }
+  .estimate-info { padding-right: 0; }
+
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
+  .hero-content { padding-top: 100px; }
+  .hero-headline, .hero-headline-gold { font-size: clamp(48px, 12vw, 72px); }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2)::after { display: none; }
+  .stat-item:nth-child(3)::after, .stat-item:nth-child(4)::after { top: 20%; }
+
+  .services-grid { grid-template-columns: 1fr 1fr; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .final-cta h2 { font-size: clamp(36px, 8vw, 56px); }
+
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero-headline, .hero-headline-gold { font-size: clamp(42px, 12vw, 56px); }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn-gold, .hero-ctas .btn-ghost { width: 100%; }
+  .trust-pill { font-size: 11px; padding: 6px 12px; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-number { font-size: 48px; }
+
+  .estimate-form-card { padding: 24px; }
+}
+</style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="logo">
-        <div class="logo-icon">
-          <i class="fas fa-piggy-bank"></i>
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">Economy</span>
-          <span class="logo-sub">Auto Repair</span>
-        </div>
+
+<!-- ============================================
+     1. NAVIGATION
+     ============================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <div class="nav-logo-text">Economy<span>Auto Repair</span></div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">About</a></li>
+      <li><a href="#specials">Specials</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#estimate">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:9564000911" class="nav-phone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (956) 400-0911
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#specials">Specials</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="tel:9564000911" class="btn btn-primary nav-cta"><i class="fas fa-phone"></i> Call Now</a>
-        <a href="#estimate" class="btn btn-outline nav-cta">Free Estimate</a>
-      </div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#estimate" class="btn-gold nav-cta">Free Estimate</a>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-star"></i> 4.9 Stars — 155+ Reviews on Google
-        </div>
-        <h1>Honest. Affordable.<br><span class="text-red">Auto Repair</span> You Can Trust.</h1>
-        <p class="hero-subtitle">Valley Wide Service with <strong>FREE Towing</strong> & <strong>FREE Estimates</strong>. Serving McAllen, TX and the entire Rio Grande Valley since day one.</p>
-        <div class="hero-actions">
-          <a href="tel:9564000911" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> (956) 400-0911</a>
-          <a href="#estimate" class="btn btn-white btn-lg"><i class="fas fa-file-alt"></i> Get Free Estimate</a>
-        </div>
-        <div class="hero-badges">
-          <div class="hero-badge-item">
-            <i class="fas fa-truck"></i>
-            <span>Free Towing</span>
-          </div>
-          <div class="hero-badge-item">
-            <i class="fas fa-clipboard-check"></i>
-            <span>Free Estimates</span>
-          </div>
-          <div class="hero-badge-item">
-            <i class="fas fa-credit-card"></i>
-            <span>Visa & MC Accepted</span>
-          </div>
-          <div class="hero-badge-item">
-            <i class="fas fa-gas-pump"></i>
-            <span>Gas & Diesel</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="special-card">
-          <div class="special-card-header">
-            <i class="fas fa-tag"></i> TODAY'S SPECIAL
-          </div>
-          <div class="special-card-body">
-            <div class="special-price">
-              <span class="price-dollar">$</span>
-              <span class="price-amount">8</span>
-            </div>
-            <p class="special-title">Oil Change</p>
-            <p class="special-desc">+ FREE A/C Check with any service</p>
-            <a href="tel:9564000911" class="btn btn-primary btn-block">Claim This Deal</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <a href="#services"><i class="fas fa-chevron-down"></i></a>
-    </div>
-  </section>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <!-- Trust Strip -->
-  <section class="trust-strip">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-number" data-count="155">0</div>
-          <div class="trust-label">5-Star Reviews</div>
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#hero" class="mobile-nav-link">Home</a>
+  <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#why-us" class="mobile-nav-link">About</a>
+  <a href="#specials" class="mobile-nav-link">Specials</a>
+  <a href="#reviews" class="mobile-nav-link">Reviews</a>
+  <a href="#gallery" class="mobile-nav-link">Gallery</a>
+  <a href="#estimate" class="mobile-nav-link">Contact</a>
+  <a href="tel:9564000911" class="mobile-nav-phone">(956) 400-0911</a>
+</div>
+
+<!-- ============================================
+     2. HERO SECTION
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" role="img" aria-label="Auto repair shop"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        McAllen, TX — RGV's Trusted Shop
+      </div>
+      <h1 class="hero-headline">Honest. Affordable.<br>Auto Repair.</h1>
+      <div class="hero-headline-gold">You Can Trust.</div>
+      <p class="hero-body">Valley Wide Service with FREE Towing &amp; FREE Estimates. Serving McAllen, TX and the entire Rio Grande Valley.</p>
+      <div class="hero-ctas">
+        <a href="tel:9564000911" class="btn-gold">Call (956) 400-0911</a>
+        <a href="#estimate" class="btn-ghost">Get Free Estimate</a>
+      </div>
+      <div class="hero-trust-row">
+        <span class="trust-pill"><span class="emoji">⭐</span> 4.9 Stars Google</span>
+        <span class="trust-pill"><span class="emoji">🔧</span> Free Towing</span>
+        <span class="trust-pill"><span class="emoji">📋</span> Free Estimates</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ============================================
+     3. MARQUEE STRIP
+     ============================================ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>FREE TOWING VALLEY WIDE</span><span class="sep">◆</span>
+    <span>4.9 STARS · 155+ REVIEWS</span><span class="sep">◆</span>
+    <span>$8 OIL CHANGES</span><span class="sep">◆</span>
+    <span>FREE ESTIMATES</span><span class="sep">◆</span>
+    <span>GAS &amp; DIESEL</span><span class="sep">◆</span>
+    <span>ALL MAKES &amp; MODELS</span><span class="sep">◆</span>
+    <span>SAME DAY SERVICE</span><span class="sep">◆</span>
+    <span>FINANCING OPTIONS</span><span class="sep">◆</span>
+    <span>FREE TOWING VALLEY WIDE</span><span class="sep">◆</span>
+    <span>4.9 STARS · 155+ REVIEWS</span><span class="sep">◆</span>
+    <span>$8 OIL CHANGES</span><span class="sep">◆</span>
+    <span>FREE ESTIMATES</span><span class="sep">◆</span>
+    <span>GAS &amp; DIESEL</span><span class="sep">◆</span>
+    <span>ALL MAKES &amp; MODELS</span><span class="sep">◆</span>
+    <span>SAME DAY SERVICE</span><span class="sep">◆</span>
+    <span>FINANCING OPTIONS</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- ============================================
+     4. STATS BAR
+     ============================================ -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up">
+        <div class="stat-number" data-target="155">0</div>
+        <div class="stat-label">5-Star Reviews</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-number" data-target="5000">0</div>
+        <div class="stat-label">Vehicles Serviced</div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">Satisfaction Guaranteed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     5. SERVICES SECTION
+     ============================================ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header" data-aos="fade-up">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-heading">Complete Auto Repair Services</h2>
+      <p class="section-sub">From basic maintenance to major engine rebuilds — we handle it all at prices that won't break the bank.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon"><i data-lucide="cog"></i></div>
+        <h3>Engine Rebuilds</h3>
+        <p>Complete engine overhauls and rebuilds for gas and diesel vehicles. We restore your engine to peak performance and extend its life by thousands of miles.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i data-lucide="settings"></i></div>
+        <h3>Transmission Rebuilds</h3>
+        <p>Manual and automatic transmission repair and rebuilding. We diagnose shifting problems, leaks, and complete failures — and fix them right the first time.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i data-lucide="wind"></i></div>
+        <h3>A/C Service & Rebuilds</h3>
+        <p>Beat the Valley heat with expert A/C diagnosis, recharge, and full system rebuilds. Free A/C check with any service — stay cool for less.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon"><i data-lucide="disc"></i></div>
+        <h3>Brakes & Suspension</h3>
+        <p>Brake pad replacement, rotor resurfacing, caliper repair, and full suspension work. Your safety is never something we cut corners on.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon"><i data-lucide="zap"></i></div>
+        <h3>Electrical Systems</h3>
+        <p>Alternators, starters, wiring harnesses, and full electrical diagnostics. We track down shorts, drains, and gremlins other shops can't find.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i data-lucide="gauge"></i></div>
+        <h3>Tune-Ups & Maintenance</h3>
+        <p>Oil changes starting at $8, spark plugs, filters, belts, and scheduled maintenance to keep your vehicle running smoothly for years to come.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i data-lucide="thermometer"></i></div>
+        <h3>Radiator Service</h3>
+        <p>Radiator repair, replacement, coolant flushes, and overheating diagnostics. We keep your engine running at the right temperature — even in South Texas summers.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon"><i data-lucide="truck"></i></div>
+        <h3>Diesel Repair</h3>
+        <p>Specialized diesel engine repair for trucks and heavy-duty vehicles. Injectors, turbos, fuel systems, and complete diesel overhauls at honest prices.</p>
+        <a href="#estimate" class="service-link">Get a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     6. WHY CHOOSE US
+     ============================================ -->
+<section class="why-us" id="why-us">
+  <div class="why-us-image" data-aos="fade-right">
+    <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Economy Auto Repair mechanic at work" loading="lazy">
+  </div>
+  <div class="why-us-content" data-aos="fade-left">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-heading">The Valley's Most Trusted Auto Repair Shop</h2>
+    <p>At Economy Auto Repair, we believe quality auto repair shouldn't cost a fortune. Our certified mechanics deliver dealership-quality work at prices that respect your budget. That's why we're rated 4.9 stars with over 155 reviews.</p>
+
+    <div class="trust-points">
+      <div class="trust-point">
+        <div class="trust-point-icon">🔧</div>
+        <div class="trust-point-text">
+          <h4>Free Towing Service</h4>
+          <p>Broke down? We'll come get you — no charge, anywhere in the Valley.</p>
         </div>
-        <div class="trust-item">
-          <div class="trust-number" data-count="15">0</div>
-          <div class="trust-label">Years Experience</div>
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">📋</div>
+        <div class="trust-point-text">
+          <h4>Free Estimates</h4>
+          <p>Know exactly what you're paying before we start. No surprises, no hidden fees.</p>
         </div>
-        <div class="trust-item">
-          <div class="trust-number" data-count="5000">0</div>
-          <div class="trust-label">Vehicles Serviced</div>
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">✅</div>
+        <div class="trust-point-text">
+          <h4>Honest & Transparent</h4>
+          <p>We only fix what needs fixing. We show you the problem first and let you decide.</p>
         </div>
-        <div class="trust-item">
-          <div class="trust-number" data-count="100">0</div>
-          <div class="trust-label">% Satisfaction</div>
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">🚗</div>
+        <div class="trust-point-text">
+          <h4>All Makes & Models</h4>
+          <p>Gas, diesel, compact or heavy-duty — we service them all with expert care.</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">What We Do</span>
-        <h2>Complete Auto Repair <span class="text-red">Services</span></h2>
-        <p>From basic maintenance to major engine rebuilds — we handle it all at prices that won't break the bank.</p>
+    <div class="why-us-bottom">
+      <a href="tel:9564000911" class="btn-gold">Call Us Today</a>
+      <div class="google-badge">⭐ 4.9 / 5 · 155+ Google Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     7. SPECIALS SECTION
+     ============================================ -->
+<section class="specials" id="specials">
+  <div class="container">
+    <div class="specials-header" data-aos="fade-up">
+      <div class="section-label">Save Money</div>
+      <h2 class="section-heading">Current Specials</h2>
+    </div>
+
+    <div class="specials-grid">
+      <div class="special-card featured" data-aos="fade-up" data-aos-delay="0">
+        <div class="ribbon">Best Deal</div>
+        <div class="special-price">$8</div>
+        <h3>Oil Change</h3>
+        <p>Keep your engine protected with our unbeatable oil change deal.</p>
+        <ul>
+          <li>Conventional oil & filter</li>
+          <li>Multi-point inspection</li>
+          <li>Fluid top-off included</li>
+        </ul>
+        <a href="tel:9564000911" class="btn-gold">Book Now</a>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-gear"></i></div>
-          <h3>Engine Rebuilds</h3>
-          <p>Complete engine diagnostics, rebuilds, and replacements for gas and diesel engines. We bring your engine back to life.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+
+      <div class="special-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="special-price">FREE</div>
+        <h3>A/C System Check</h3>
+        <p>Stay cool in the Valley heat — free A/C inspection with any service.</p>
+        <ul>
+          <li>Full system pressure test</li>
+          <li>Leak detection</li>
+          <li>Performance evaluation</li>
+        </ul>
+        <a href="tel:9564000911" class="btn-gold">Book Now</a>
+      </div>
+
+      <div class="special-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="special-price">FREE</div>
+        <h3>Valley Wide Towing</h3>
+        <p>Broke down anywhere in the RGV? We'll tow your vehicle to our shop at no cost.</p>
+        <ul>
+          <li>McAllen, Edinburg, Mission</li>
+          <li>Pharr, Weslaco & more</li>
+          <li>Available Mon–Sat</li>
+        </ul>
+        <a href="tel:9564000911" class="btn-gold">Call for Towing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     8. REVIEWS SECTION
+     ============================================ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-header" data-aos="fade-up">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-heading">What Our Customers Say</h2>
+      <p class="section-sub">155+ verified Google reviews. Don't just take our word for it. <a href="https://www.google.com/maps/place/Economy+Auto+Repair,+1721+W+State+Hwy+107,+McAllen,+TX+78504" target="_blank" rel="noopener" class="reviews-link">See All Reviews →</a></p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best auto repair shop in McAllen. They fixed my transmission when two other shops said I needed a new one. Saved me thousands of dollars. Honest people who do great work."</p>
+        <div class="review-author">
+          <div class="review-avatar">JG</div>
+          <div>
+            <div class="review-name">Juan Garcia</div>
+            <div class="review-city">McAllen, TX</div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-cogs"></i></div>
-          <h3>Transmission Rebuilds</h3>
-          <p>Expert transmission repair and rebuild services. Manual and automatic transmissions for all makes and models.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They towed my car for free and had it fixed the same day. The price was way less than what the dealership quoted me. I won't go anywhere else now."</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div>
+            <div class="review-name">Maria Rodriguez</div>
+            <div class="review-city">Edinburg, TX</div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-          <h3>A/C Service & Rebuilds</h3>
-          <p>Complete A/C diagnostics, recharge, and full system rebuilds. Stay cool in the Texas heat.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"$8 oil change is no joke — they actually do it and the service is fast. My truck runs better than when I bought it. These guys know what they're doing."</p>
+        <div class="review-author">
+          <div class="review-avatar">RL</div>
+          <div>
+            <div class="review-name">Roberto Luna</div>
+            <div class="review-city">Mission, TX</div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-compact-disc"></i></div>
-          <h3>Brakes & Suspension</h3>
-          <p>Brake pads, rotors, calipers, shocks, struts, and full suspension work. Keep your ride safe and smooth.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="review-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My A/C died in July — worst timing ever. They checked it for free, gave me an honest quote, and had cold air blowing the next day. Lifesavers in this Valley heat!"</p>
+        <div class="review-author">
+          <div class="review-avatar">AS</div>
+          <div>
+            <div class="review-name">Ana Salinas</div>
+            <div class="review-city">Pharr, TX</div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Electrical Systems</h3>
-          <p>Alternators, starters, wiring, diagnostics, and complete electrical repairs for any vehicle.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I've been coming here for 3 years. They're always upfront about what's wrong and what it costs. No upselling, no games. Just good, honest mechanics."</p>
+        <div class="review-author">
+          <div class="review-avatar">DV</div>
+          <div>
+            <div class="review-name">Daniel Vega</div>
+            <div class="review-city">Weslaco, TX</div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-oil-can"></i></div>
-          <h3>Tune-Ups & Maintenance</h3>
-          <p>Oil changes, fluid checks, spark plugs, filters, and preventive maintenance to keep you on the road.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-water"></i></div>
-          <h3>Radiator Service</h3>
-          <p>Radiator repair, replacement, coolant flushes, and overheating diagnostics. Don't let your engine overheat.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-truck-pickup"></i></div>
-          <h3>Diesel Repair</h3>
-          <p>Specialized diesel engine repair and maintenance. We service diesel trucks, SUVs, and commercial vehicles.</p>
-          <a href="#estimate" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Engine rebuild on my F-150 — other shops wanted $4,000+. Economy did it right for almost half. Truck runs like new. Best mechanic shop in the Valley, hands down."</p>
+        <div class="review-author">
+          <div class="review-avatar">CT</div>
+          <div>
+            <div class="review-name">Carlos Torres</div>
+            <div class="review-city">McAllen, TX</div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Why Choose Us -->
-  <section class="why-us" id="about">
-    <div class="container">
-      <div class="why-us-grid">
-        <div class="why-us-content">
-          <span class="section-tag">Why Choose Us</span>
-          <h2>The Valley's Most <span class="text-red">Trusted</span> Auto Repair Shop</h2>
-          <p class="why-us-desc">At Economy Auto Repair, we believe quality auto repair shouldn't cost a fortune. Our certified mechanics deliver dealership-quality work at prices that respect your budget. That's why we're rated <strong>4.9 stars</strong> with over <strong>155 reviews</strong>.</p>
-          <div class="why-us-features">
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-              <div>
-                <h4>Free Towing Service</h4>
-                <p>Broke down? We'll come get you — no charge for towing to our shop.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-              <div>
-                <h4>Free Estimates</h4>
-                <p>Know exactly what you're paying before we start. No surprises, no hidden fees.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-              <div>
-                <h4>Honest & Transparent</h4>
-                <p>We only fix what needs fixing. We'll show you the problem before we repair it.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
-              <div>
-                <h4>All Makes & Models</h4>
-                <p>From compact cars to heavy-duty diesel trucks — we service them all.</p>
-              </div>
+<!-- ============================================
+     9. GALLERY SECTION
+     ============================================ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header" data-aos="fade-up">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-heading">Shop Gallery</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item large" data-aos="fade-up">
+        <img src="https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Economy Auto Repair shop interior" loading="lazy">
+        <div class="caption"><span>Our Shop</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/3642618/pexels-photo-3642618.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Engine rebuild work" loading="lazy">
+        <div class="caption"><span>Engine Rebuilds</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.pexels.com/photos/3807811/pexels-photo-3807811.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Brake service" loading="lazy">
+        <div class="caption"><span>Brake Service</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/4488660/pexels-photo-4488660.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Diagnostic equipment" loading="lazy">
+        <div class="caption"><span>Diagnostics</span></div>
+      </div>
+
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.pexels.com/photos/3807133/pexels-photo-3807133.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Professional tools" loading="lazy">
+        <div class="caption"><span>Professional Tools</span></div>
+      </div>
+
+      <div class="gallery-item large" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Transmission rebuild" loading="lazy">
+        <div class="caption"><span>Transmission Rebuilds</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     10. ESTIMATE FORM SECTION
+     ============================================ -->
+<section class="estimate" id="estimate">
+  <div class="container">
+    <div class="estimate-grid">
+      <div class="estimate-info" data-aos="fade-right">
+        <div class="section-label">No Obligation</div>
+        <h2 class="section-heading">Get Your Free Estimate</h2>
+        <p>Tell us what's going on with your vehicle and we'll get back to you with an honest, no-obligation estimate. No pressure, no games — just straight answers.</p>
+
+        <div class="info-blocks">
+          <div class="info-block">
+            <div class="info-block-icon"><i data-lucide="phone"></i></div>
+            <div class="info-block-text">
+              <strong>(956) 400-0911</strong>
+              <span>Call or text anytime</span>
             </div>
           </div>
-          <a href="tel:9564000911" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Call Us Today</a>
+          <div class="info-block">
+            <div class="info-block-icon"><i data-lucide="map-pin"></i></div>
+            <div class="info-block-text">
+              <strong>1721 W State Hwy 107</strong>
+              <span>McAllen, TX 78504</span>
+            </div>
+          </div>
+          <div class="info-block">
+            <div class="info-block-icon"><i data-lucide="clock"></i></div>
+            <div class="info-block-text">
+              <strong>Mon–Fri 8 AM – 7 PM | Sat 8 AM – 5 PM</strong>
+              <span>Sunday Closed</span>
+            </div>
+          </div>
         </div>
-        <div class="why-us-images">
-          <div class="why-us-img-main">
-            <img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mechanic working on car engine" loading="lazy">
-          </div>
-          <div class="why-us-img-secondary">
-            <img src="https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Auto repair shop" loading="lazy">
-          </div>
-          <div class="why-us-stats-card">
-            <div class="stats-card-inner">
-              <div class="stats-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-              <div class="stats-rating">4.9 / 5</div>
-              <div class="stats-source">Google Reviews</div>
+
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.234!2d-98.2204792!3d26.3088763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a315f00c1e0d%3A0x2ff005d23c4c7e40!2sEconomy%20Auto%20Repair!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Economy Auto Repair location on Google Maps"></iframe>
+        </div>
+      </div>
+
+      <div class="estimate-form-card" data-aos="fade-left">
+        <h3>Request an Estimate</h3>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+        <form id="estimateForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(956) 000-0000" required>
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email (Optional)</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="vehicle">Year / Make / Model</label>
+              <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2018 Ford F-150" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="engine">Engine Rebuilds</option>
+              <option value="transmission">Transmission Rebuilds</option>
+              <option value="ac">A/C Service & Rebuilds</option>
+              <option value="brakes">Brakes & Suspension</option>
+              <option value="electrical">Electrical Systems</option>
+              <option value="tuneup">Tune-Ups & Maintenance</option>
+              <option value="radiator">Radiator Service</option>
+              <option value="diesel">Diesel Repair</option>
+              <option value="diagnostic">Diagnostic</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="problem">Describe the Problem</label>
+            <textarea id="problem" name="problem" placeholder="Tell us what's happening with your vehicle..." rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send My Free Estimate →</button>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="check-icon">✓</div>
+          <h3>Estimate Request Sent!</h3>
+          <p>Thanks! We'll review your request and get back to you shortly. For immediate assistance, call <a href="tel:9564000911" style="color:var(--gold)">(956) 400-0911</a>.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Specials Section -->
-  <section class="specials" id="specials">
-    <div class="container">
-      <div class="section-header section-header-light">
-        <span class="section-tag section-tag-light">Save Money</span>
-        <h2>Current <span class="text-white">Specials</span></h2>
-        <p>Take advantage of our unbeatable deals. Quality service at economy prices — that's our promise.</p>
-      </div>
-      <div class="specials-grid">
-        <div class="special-offer-card">
-          <div class="offer-ribbon">BEST DEAL</div>
-          <div class="offer-icon"><i class="fas fa-oil-can"></i></div>
-          <h3>Oil Change</h3>
-          <div class="offer-price">
-            <span class="offer-dollar">$</span>
-            <span class="offer-amount">8</span>
-          </div>
-          <p>Conventional oil change to keep your engine running smooth. Most vehicles.</p>
-          <ul class="offer-includes">
-            <li><i class="fas fa-check"></i> Up to 5 qts conventional oil</li>
-            <li><i class="fas fa-check"></i> New oil filter</li>
-            <li><i class="fas fa-check"></i> Multi-point inspection</li>
-          </ul>
-          <a href="tel:9564000911" class="btn btn-primary btn-block">Book Now</a>
-        </div>
-        <div class="special-offer-card">
-          <div class="offer-icon"><i class="fas fa-snowflake"></i></div>
-          <h3>Free A/C Check</h3>
-          <div class="offer-price">
-            <span class="offer-dollar"></span>
-            <span class="offer-amount">FREE</span>
-          </div>
-          <p>Complimentary A/C performance check with any service. Stay cool this summer.</p>
-          <ul class="offer-includes">
-            <li><i class="fas fa-check"></i> System pressure test</li>
-            <li><i class="fas fa-check"></i> Temperature check</li>
-            <li><i class="fas fa-check"></i> Visual inspection</li>
-          </ul>
-          <a href="tel:9564000911" class="btn btn-primary btn-block">Book Now</a>
-        </div>
-        <div class="special-offer-card">
-          <div class="offer-icon"><i class="fas fa-truck"></i></div>
-          <h3>Free Towing</h3>
-          <div class="offer-price">
-            <span class="offer-dollar"></span>
-            <span class="offer-amount">FREE</span>
-          </div>
-          <p>Free towing to our shop when you choose us for your repair. Valley wide coverage.</p>
-          <ul class="offer-includes">
-            <li><i class="fas fa-check"></i> Valley wide service area</li>
-            <li><i class="fas fa-check"></i> Available 7 days a week</li>
-            <li><i class="fas fa-check"></i> All vehicle types</li>
-          </ul>
-          <a href="tel:9564000911" class="btn btn-primary btn-block">Call for Towing</a>
-        </div>
-      </div>
+<!-- ============================================
+     11. FINAL CTA BANNER
+     ============================================ -->
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="container final-cta-content" data-aos="fade-up">
+    <h2>Need a Repair?<br>Don't Wait.</h2>
+    <p>Free towing. Free estimates. Honest pricing.</p>
+    <div class="final-cta-buttons">
+      <a href="tel:9564000911" class="btn-gold">(956) 400-0911</a>
+      <a href="#estimate" class="btn-ghost">Get Free Estimate</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Reviews Section -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Testimonials</span>
-        <h2>What Our <span class="text-red">Customers</span> Say</h2>
-        <p>Don't just take our word for it — hear from our 155+ satisfied customers.</p>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"Best mechanic shop in the Valley! They fixed my transmission for half the price the dealer quoted. Honest people who do quality work. I won't go anywhere else."</p>
-          <div class="review-author">
-            <div class="review-avatar">MR</div>
-            <div>
-              <strong>Maria R.</strong>
-              <span>McAllen, TX</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"My truck broke down on 107 and they towed it for free. Had it running the next day. The price was very fair and they explained everything. Highly recommend!"</p>
-          <div class="review-author">
-            <div class="review-avatar">JG</div>
-            <div>
-              <strong>Juan G.</strong>
-              <span>Edinburg, TX</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"Economy Auto Repair saved me thousands on my engine rebuild. They showed me exactly what was wrong and fixed it right. A/C blows ice cold now too. Thank you!"</p>
-          <div class="review-author">
-            <div class="review-avatar">RL</div>
-            <div>
-              <strong>Roberto L.</strong>
-              <span>Mission, TX</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"I've been bringing all my family's cars here for years. They always treat us right with fair prices. The $8 oil change is unbeatable. Best in the RGV!"</p>
-          <div class="review-author">
-            <div class="review-avatar">SV</div>
-            <div>
-              <strong>Sandra V.</strong>
-              <span>Pharr, TX</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"Took my diesel truck in for brake work. They did a great job, finished on time, and the price was exactly what they quoted. No surprises. These guys are legit."</p>
-          <div class="review-author">
-            <div class="review-avatar">DM</div>
-            <div>
-              <strong>Daniel M.</strong>
-              <span>Weslaco, TX</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="review-text">"My car's A/C died in July — the worst time in the Valley! They got me in same day and fixed it for a great price. Free A/C check is a huge bonus. Love this place."</p>
-          <div class="review-author">
-            <div class="review-avatar">LH</div>
-            <div>
-              <strong>Laura H.</strong>
-              <span>McAllen, TX</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reviews-cta">
-        <a href="https://www.google.com/maps/place/Economy+Auto+Repair,+1721+W+State+Hwy+107,+McAllen,+TX+78504/@26.3088763,-98.2204792,17z/data=!3m1!4b1!4m6!3m5!1s0x8665a315f00c1e0d:0x2ff005d23c4c7e40" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
-          <i class="fab fa-google"></i> See All Google Reviews
+<!-- ============================================
+     12. FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <div class="nav-logo-text">Economy<span>Auto Repair</span></div>
         </a>
+        <p>Honest. Affordable. Auto Repair You Can Trust. Serving the Rio Grande Valley with integrity since day one.</p>
+        <div class="payment-badges">
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">Cash</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Gallery Section -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Our Work</span>
-        <h2>Shop <span class="text-red">Gallery</span></h2>
-        <p>Take a look inside our fully equipped shop and see our work in action.</p>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Engine Rebuilds</a></li>
+          <li><a href="#services">Transmission Rebuilds</a></li>
+          <li><a href="#services">A/C Service</a></li>
+          <li><a href="#services">Brakes & Suspension</a></li>
+          <li><a href="#services">Electrical Systems</a></li>
+          <li><a href="#services">Diesel Repair</a></li>
+        </ul>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item gallery-item-large">
-          <img src="https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Auto repair shop interior" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Full Service Shop</span>
-          </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#why-us">About Us</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#estimate">Free Estimate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span><a href="tel:9564000911" style="color:var(--muted)">(956) 400-0911</a></span>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.pexels.com/photos/3642618/pexels-photo-3642618.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Engine repair" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Engine Work</span>
-          </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><a href="https://www.google.com/maps/place/Economy+Auto+Repair,+1721+W+State+Hwy+107,+McAllen,+TX+78504" target="_blank" rel="noopener" style="color:var(--muted)">1721 W State Hwy 107, McAllen, TX 78504</a></span>
         </div>
-        <div class="gallery-item">
-          <img src="https://images.pexels.com/photos/3807811/pexels-photo-3807811.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Brake repair" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Brake Service</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.pexels.com/photos/4488660/pexels-photo-4488660.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Diagnostic equipment" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Diagnostics</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.pexels.com/photos/3807133/pexels-photo-3807133.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Mechanic tools" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Professional Tools</span>
-          </div>
-        </div>
-        <div class="gallery-item gallery-item-large">
-          <img src="https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Transmission work" loading="lazy">
-          <div class="gallery-overlay">
-            <span>Transmission Rebuilds</span>
-          </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon–Fri 8AM–7PM<br>Sat 8AM–5PM | Sun Closed</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Free Estimate Form -->
-  <section class="estimate" id="estimate">
-    <div class="container">
-      <div class="estimate-grid">
-        <div class="estimate-content">
-          <span class="section-tag section-tag-light">No Obligation</span>
-          <h2>Get Your <span class="text-white">Free Estimate</span></h2>
-          <p>Tell us about your vehicle and what's going on. We'll get back to you with a free, no-obligation estimate. You can also call us directly for immediate assistance.</p>
-          <div class="estimate-contact-info">
-            <div class="estimate-info-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Call Us</strong>
-                <a href="tel:9564000911">(956) 400-0911</a>
-              </div>
-            </div>
-            <div class="estimate-info-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Visit Us</strong>
-                <span>1721 W State Hwy 107<br>McAllen, TX 78504</span>
-              </div>
-            </div>
-            <div class="estimate-info-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Hours</strong>
-                <span>Mon–Sat: 8:00 AM – 7:00 PM<br>Sunday: Closed</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="estimate-form-wrapper">
-          <form class="estimate-form" id="estimateForm">
-            <h3>Request Free Estimate</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="(956) 555-1234">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="john@email.com">
-              </div>
-              <div class="form-group">
-                <label for="vehicle">Year / Make / Model *</label>
-                <input type="text" id="vehicle" name="vehicle" required placeholder="2020 Toyota Camry">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="service">Service Needed *</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service...</option>
-                <option value="oil-change">Oil Change</option>
-                <option value="engine-repair">Engine Repair / Rebuild</option>
-                <option value="transmission">Transmission Repair / Rebuild</option>
-                <option value="ac-service">A/C Service / Rebuild</option>
-                <option value="brakes">Brakes & Suspension</option>
-                <option value="electrical">Electrical System</option>
-                <option value="tune-up">Tune-Up & Maintenance</option>
-                <option value="radiator">Radiator Service</option>
-                <option value="diesel">Diesel Repair</option>
-                <option value="diagnostic">Diagnostic / Check Engine Light</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="description">Describe the Problem</label>
-              <textarea id="description" name="description" rows="4" placeholder="Tell us what's going on with your vehicle..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block btn-lg">
-              <i class="fas fa-paper-plane"></i> Send Request
-            </button>
-            <p class="form-disclaimer"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</p>
-          </form>
-          <div class="form-success" id="formSuccess" style="display:none;">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>Request Sent!</h3>
-            <p>Thank you! We'll get back to you within 1 business hour with your free estimate. For immediate help, call us at <a href="tel:9564000911">(956) 400-0911</a>.</p>
-          </div>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Economy Auto Repair. All rights reserved. | Serving McAllen, Edinburg, Mission, Pharr, Weslaco &amp; the RGV</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Map & Contact -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Find Us</span>
-        <h2>Visit Our <span class="text-red">Shop</span></h2>
-        <p>Conveniently located on Highway 107 in McAllen. Easy to find, easy to reach.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="map-wrapper">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1793!2d-98.2204792!3d26.3088763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665a315f00c1e0d%3A0x2ff005d23c4c7e40!2sEconomy%20Auto%20Repair!5e0!3m2!1sen!2sus!4v1"
-            width="100%"
-            height="450"
-            style="border:0;border-radius:16px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Economy Auto Repair Location">
-          </iframe>
-        </div>
-        <div class="contact-cards">
-          <div class="contact-card">
-            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <h4>Address</h4>
-            <p>1721 W State Hwy 107<br>McAllen, TX 78504</p>
-            <a href="https://www.google.com/maps/dir//Economy+Auto+Repair,+1721+W+State+Hwy+107,+McAllen,+TX+78504/@26.3088763,-98.2204792,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8665a315f00c1e0d:0x2ff005d23c4c7e40!2m2!1d-98.2204792!2d26.3088763" target="_blank" rel="noopener" class="contact-link">Get Directions <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
-            <h4>Phone</h4>
-            <p><a href="tel:9564000911">(956) 400-0911</a></p>
-            <span class="contact-note">Call for same-day appointments</span>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
-            <h4>Business Hours</h4>
-            <div class="hours-list">
-              <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 7:00 PM</span></div>
-              <div class="hours-row"><span>Saturday</span><span>8:00 AM – 5:00 PM</span></div>
-              <div class="hours-row hours-closed"><span>Sunday</span><span>Closed</span></div>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-card-icon"><i class="fas fa-credit-card"></i></div>
-            <h4>Payment Methods</h4>
-            <div class="payment-icons">
-              <i class="fab fa-cc-visa"></i>
-              <i class="fab fa-cc-mastercard"></i>
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
-            <span class="contact-note">Cash, Visa & Mastercard accepted</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- CDN Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-  <!-- CTA Banner -->
-  <section class="cta-banner">
-    <div class="container">
-      <div class="cta-inner">
-        <div class="cta-content">
-          <h2>Need a Repair? <span>Don't Wait.</span></h2>
-          <p>Free towing. Free estimates. Honest pricing. Call us right now or schedule online.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:9564000911" class="btn btn-white btn-lg"><i class="fas fa-phone"></i> (956) 400-0911</a>
-          <a href="#estimate" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i> Free Estimate</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+/* ============================================
+   INITIALIZATION
+   ============================================ */
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <a href="#" class="footer-logo">
-            <div class="logo-icon"><i class="fas fa-piggy-bank"></i></div>
-            <div class="logo-text">
-              <span class="logo-name">Economy</span>
-              <span class="logo-sub">Auto Repair</span>
-            </div>
-          </a>
-          <p>Your trusted auto repair shop in McAllen, TX. Quality repairs at economy prices with free towing and free estimates. Serving the entire Rio Grande Valley.</p>
-          <div class="footer-socials">
-            <a href="https://www.google.com/maps/place/Economy+Auto+Repair,+1721+W+State+Hwy+107,+McAllen,+TX+78504/@26.3088763,-98.2204792,17z/data=!3m1!4b1!4m6!3m5!1s0x8665a315f00c1e0d:0x2ff005d23c4c7e40" target="_blank" rel="noopener" aria-label="Google Business Profile"><i class="fab fa-google"></i></a>
-          </div>
-        </div>
-        <div class="footer-links-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Engine Rebuilds</a></li>
-            <li><a href="#services">Transmission Rebuilds</a></li>
-            <li><a href="#services">A/C Service</a></li>
-            <li><a href="#services">Brakes & Suspension</a></li>
-            <li><a href="#services">Electrical Systems</a></li>
-            <li><a href="#services">Diesel Repair</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#estimate">Free Estimate</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <div class="footer-contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:9564000911">(956) 400-0911</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>1721 W State Hwy 107<br>McAllen, TX 78504</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fas fa-clock"></i>
-            <span>Mon–Sat: 8 AM – 7 PM</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Economy Auto Repair. All rights reserved.</p>
-        <p class="footer-powered">Valley Wide Service — McAllen, Edinburg, Mission, Pharr, Weslaco & beyond</p>
-      </div>
-    </div>
-  </footer>
+// AOS
+AOS.init({ duration: 800, once: true, offset: 80 });
 
-  <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+// Lucide Icons
+lucide.createIcons();
 
-  <!-- Floating Call Button (Mobile) -->
-  <a href="tel:9564000911" class="floating-call" aria-label="Call Economy Auto Repair">
-    <i class="fas fa-phone"></i>
-  </a>
+/* ============================================
+   NAVBAR SCROLL EFFECT
+   ============================================ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+});
 
-  <script src="script.js"></script>
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+  document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+});
+
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileNav.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ============================================
+   STATS COUNTER ANIMATION
+   ============================================ */
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+
+function animateCounters() {
+  if (statsAnimated) return;
+  const statsSection = document.querySelector('.stats-bar');
+  const rect = statsSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.8) {
+    statsAnimated = true;
+    statNumbers.forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const suffix = target === 100 ? '%' : '+';
+      const duration = 1500;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+
+        if (target >= 1000) {
+          el.textContent = current.toLocaleString() + suffix;
+        } else {
+          el.textContent = current + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      requestAnimationFrame(update);
+    });
+  }
+}
+
+window.addEventListener('scroll', animateCounters);
+animateCounters();
+
+/* ============================================
+   FORM SUBMISSION
+   ============================================ */
+const form = document.getElementById('estimateForm');
+const formSuccess = document.getElementById('formSuccess');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.style.display = 'none';
+  formSuccess.classList.add('active');
+  formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+/* ============================================
+   SMOOTH SCROLL FOR ANCHOR LINKS
+   ============================================ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 64;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
 </body>
 </html>
